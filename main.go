@@ -30,7 +30,7 @@ func Flatten() (out map[string]interface{}) {
 			for k, v := range m.(map[string]interface{}) {
 				p := ""
 				if prefix != "" {
-					p = prefix + "/"
+					p = prefix + "."
 
 				}
 				flattener(p+k, v)
@@ -101,7 +101,7 @@ func main() {
 					fmt.Println(k)
 				}
 			} else {
-				fmt.Println(k)
+				fmt.Printf("%s=%#v\n", k, out[k])
 			}
 		}
 		return
